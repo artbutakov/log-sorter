@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Log Sorter</title>
+    </head>
+    <body>
+        <form action="/search" method="POST">
+            {{ form.csrf_token }}
+            {{ form.searchbar }}
+            {{ form.button }}
+        </form>
+    </body>
+</html>
