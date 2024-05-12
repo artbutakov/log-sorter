@@ -1,8 +1,8 @@
-from wtforms.fields.simple import StringField, SubmitField
-from wtforms.form import Form
+from flask_wtf import FlaskForm
+from wtforms.fields.simple import StringField, HiddenField
 from wtforms.validators import DataRequired
 
 
-class SearchForm(Form):
-    searchbar = StringField(validators=[DataRequired()])
-    button = SubmitField('Search')
+class SearchForm(FlaskForm):
+    search = StringField(validators=[DataRequired()])
+    submit = HiddenField()

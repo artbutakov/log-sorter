@@ -1,13 +1,22 @@
+{% from 'bootstrap5/form.html' import render_form %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>Log Sorter</title>
+        {% block styles %}
+            <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+            {{ bootstrap.load_css() }}
+        {% endblock %}
     </head>
     <body>
-        <form action="/search" method="POST">
-            {{ form.csrf_token }}
-            {{ form.searchbar }}
-            {{ form.button }}
-        </form>
+        <div class="container">
+            <div class="row height d-flex justify-content-center align-items-center">
+                <div class="col-md-8">
+                    <div class="search">
+                        {{ render_form(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

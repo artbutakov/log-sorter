@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Log Sorter</title>
+        <title>Results</title>
+        {% block styles %}
+            {{ bootstrap.load_css() }}
+        {% endblock %}
     </head>
     <body>
         {% if rows %}
@@ -9,7 +12,7 @@
                 <h3>Amount of rows is {{ amount_of_rows }} but here you can see only first 100 rows</h3>
             {% endif %}
             {% for row in rows %}
-                <p>{{ row.created }} {{ row.string }}</p>
+                <p><b>{{ row.created }}</b> {{ row.string }}</p>
             {% endfor %}
         {% else %}
             <h3>Nothing found</h3>
